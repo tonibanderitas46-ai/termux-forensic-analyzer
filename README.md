@@ -54,3 +54,7 @@ Este proyecto fue creado con fines educativos y de seguridad preventiva. El desa
 
 ---
 *Desarrollado por [Jonathan Miguel Peña Reyes]*
+
+---
+### 🤝 Créditos y Colaboración
+Este proyecto fue desarrollado y optimizado con el apoyo de **Gemini (Google AI)**, integrando mejores prácticas de scripting en Bash y protocolos de seguridad forense móvil.
