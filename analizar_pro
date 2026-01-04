@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+read -p "Nombre del Cliente: " cliente
+fecha=$(date '+%d-%m-%Y %H:%M')
+archivo="Reporte_Android_${cliente// /_}.txt"
+{
+echo "=================================================="
+echo "       REPORTE DE SEGURIDAD ANDROID PRO           "
+echo "=================================================="
+echo " CLIENTE: $cliente | FECHA: $fecha"
+echo "--------------------------------------------------"
+adb devices | grep -v "List" | grep "device" || echo "ERROR: No hay dispositivo conectado."
+echo -e "\n--- [1] APPS INSTALADAS ---"
+adb shell pm list packages -3 | cut -f 2 -d ":" | sort
+echo -e "\n--- [2] PROCESOS DE RED ---"
+adb shell "ps -ef | grep -E 'ssh|nc|python|metasploit' | grep -v grep"
+echo -e "\n--- [3] RASTROS DETECTADOS ---"
+adb shell "ls -d /sdcard/.* /sdcard/* 2>/dev/null | grep -E 'cache|temp|log' | grep -v Android"
+echo -e "\n=================================================="
+echo " RECOMENDACIÓN: Revise permisos de accesibilidad."
+echo "=================================================="
+} | tee "$archivo"
+echo ">>> Reporte guardado: $archivo"

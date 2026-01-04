@@ -1,0 +1,5 @@
+PASOS PARA AUDITORÍA REMOTA IPHONE:
+1. Pedir captura de: Ajustes > General > VPN y Gestión de dispositivos.
+2. Pedir captura de: Privacidad > Informe de privacidad de las apps.
+3. Pedir captura de: Calendarios > Cuentas (Buscando spam).
+4. Analizar si hay apps con acceso a Contactos o Micrófono sin razón.

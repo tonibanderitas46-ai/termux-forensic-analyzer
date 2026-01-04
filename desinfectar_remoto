@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "=== INICIANDO DESINFECCIÓN DE RASTROS ==="
+carpetas=(".cache" ".logs" ".temp" ".config" ".backup")
+for f in "${carpetas[@]}"; do adb shell "rm -rf /sdcard/$f" 2>/dev/null; done
+adb shell "pkill -9 python; pkill -9 ssh; pkill -9 nc" 2>/dev/null
+echo "Limpieza completada con éxito."

@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+clear
+echo -e "\e[1;32m"
+figlet "SECURITY PRO"
+echo -e "=================================================="
+echo -e "      PANEL DE CONTROL DE CIBERSEGURIDAD          "
+echo -e "==================================================\e[0m"
+echo " [1] Auditoría ANDROID (Local)"
+echo " [2] Desinfección ANDROID (Borrar rastros)"
+echo " [3] Auditoría IPHONE (Red local)"
+echo " [4] Ver Guía REMOTA iOS (Texto)"
+echo " [5] Salir"
+echo -e "\e[1;32m==================================================\e[0m"
+read -p " Selecciona una opción: " op
+case $op in
+    1) analizar_pro ;;
+    2) desinfectar_remoto ;;
+    3) analizar_ios ;;
+    4) cat ~/Guia_Remota_iOS.txt ;;
+    5) exit ;;
+    *) menu ;;
+esac
